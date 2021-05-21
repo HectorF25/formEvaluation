@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../assets/css/menu.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <title>Evaluación</title>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <a class="navbar-brand">
+                <img src="../assets/img/1200px-Sena_Colombia_logo.svg.png" width="30" height="30" class="d-inline-block align-top" alt=""> Sistema de Evaluacion de instructores
+            </a>
+            <form class="d-flex" action="../index.html">
+                <button class="btn btn-outline-success" id="cerrarSes">Cerrar Sesión</button>
+            </form>
+        </nav>
+    </header>
+    <form class="formEvaluation">
+        <div class="title">
+            <h1>Evaluación de Instructores</h1>
+        </div>
+        <br>
+        <div class="preguntas">
+            <label>1. Ingrese su nombre</label>
+            <input type="text" name="instructor" required/>
+            <label>2. Ingrese su correo</label>
+            <input type="mail" name="instructor" required/>
+            <label>3. Ingrese el nombre del instructor a evaluar</label>
+            <input type="text" name="instructor" required/>
+            <label>4. Elija el numero de ficha</label>
+            <select class="custom-select" id="validatedInputGroupSelect" required>
+                <option value="">--Seleccione una Ficha--</option>
+                <option>2242742</option>
+                <option>2242752</option>
+            </select>
+            <label>5. Ingrese la materia que el docente imparte</label>
+            <input type="text" name="instructor" />
+        </div>
+        <br>
+        <div class="preguntas">
+            <label>6. ¿El instructor fue puntual durante las sesiones?</label>
+            <select class="custom-select" id="validatedInputGroupSelect" required>
+                <option value="">--Seleccione una opción--</option>
+                <option>Si</option>
+                <option>No</option>
+            </select>
+            <label>7. ¿El instructor utilizó un lenguaje y expreciones claras?</label>
+            <select class="custom-select" id="validatedInputGroupSelect" required>
+                <option value="">--Seleccione una opción--</option>
+                <option>Si</option>
+                <option>No</option>
+            </select>
+            <label>8. ¿Qué tal fueron las tematicas explicadas por el instructor?</label>
+            <select class="custom-select" id="validatedInputGroupSelect" required>
+                <option value="">--Seleccione una opción--</option>
+                <option>Excelentes</option>
+                <option>Bien</option>
+                <option>Regular</option>
+                <option>Mal</option>
+                <option>Muy mal</option>
+            </select>
+            <label>9. ¿El instructor resolvio las dudas presentadas?</label>
+            <select class="custom-select" id="validatedInputGroupSelect" required>
+                <option value="">--Seleccione una opción--</option>
+                <option>Siempre</option>
+                <option>Casi Siempre</option>
+                <option>Con regularidad</option>
+                <option>Casi Nunca</option>
+                <option>Nunca</option>
+            </select>
+            <label>10. ¿El instructor fue oportuno y flexible con las fechas de entrega de trabajos? Justifique en caso de que no sea así, explicando lo ocurrido </label>
+            <select class="custom-select" name="selectT" id="validatedInputGroupSelect" onChange="mostrar(this.value);" required>
+                <option value=" ">--Seleccione una opción--</option>
+                <option value="Si">Si</option>
+                <option value="No">No</option>
+            </select>
+            <div id="Justificacion" style="display: none;">
+                <textarea cols="40" rows="4"></textarea>
+            </div>
+        </div>
+        <br>
+        <div class="preguntas ">
+            <label>11. ¿Tiene alguna sugerencia para hacer al instructor? </label>
+            <select class="custom-select" name="selectS" id="validatedInputGroupSelect" onChange="mostrarSugerencia(this.value);" required>
+                <option value=" ">--Seleccione una opción--</option>
+                <option value="Si">Si</option>
+                <option value="No">No</option>
+            </select>
+            <div id="Sugerencia" style="display: none;">
+                <textarea cols="40" rows="4"></textarea>
+            </div>
+            <label>12. En una escala del 1 al 10, donde 1 es muy mal y 10 es excelente. ¿Qué nota le asignaria usted al instructor? </label>
+            <input type="number" name="Calificacion" required pattern="[0-9]+" minlength="1" maxlength="2" min="1" max="10" />
+        </div>
+        <br>
+        <br>
+        <center><input class="btn btn-primary btn-lg" id="enviarResp" type="submit" value="Enviar"></center>
+    </form>
+    <script src="../assets/js/menu.js"></script>
+    <script src="../assets/js/selectOptions.js"></script>
+</body>
+
+</html>
