@@ -8,7 +8,7 @@ function Login() {
     const password = document.getElementById('passwordInput');
     alertaU = document.getElementById('alertaUser');
 
-    if (usuario.value == "CATA2345" && password.value == "975436") {
+    if (usuario.value == "Camilo123" && password.value == "56789") {
         alert('Bienvenido al sistema: ' + usuario.value);
         window.location = "views/menu.html";
     } else if (usuario.value == "admin" && password.value == "admin123") {
